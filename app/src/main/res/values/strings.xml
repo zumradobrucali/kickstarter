@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Kickstarter Project</string>
+    <string name="open_project">Open Project</string>
 </resources>

@@ -52,35 +52,60 @@
                     />
                 <TextView
                     android:id="@+id/pledged_textView"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/title_textView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="@{String.valueOf(projectItem.amtPledged)}"
+                    android:textSize="14sp"
+                    android:text="@{String.valueOf(projectItem.pledgedFormattedPrice)}"
                     />
+                <ImageView
+                    android:id="@+id/pledged_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_baseline_people_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pledged_textView"
+                    app:layout_constraintBottom_toTopOf="@+id/endTime_textView"/>
 
                 <TextView
                     android:id="@+id/backers_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/pledged_textView"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="4dp"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toTopOf="@+id/pledged_imageView"
+                    app:layout_constraintStart_toEndOf="@id/pledged_imageView"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/pledged_imageView"
+                    style="@style/default_text_view"
                     android:text="@{String.valueOf(projectItem.numBackers)}"
                     />
 
+                <ImageView
+                    android:id="@+id/endTime_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_baseline_calendar_today_24"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/backers_textView"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
                 <TextView
                     android:id="@+id/endTime_textView"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/backers_textView"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="4dp"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toTopOf="@+id/endTime_imageView"
+                    app:layout_constraintStart_toEndOf="@id/endTime_imageView"
+                    app:layout_constraintBottom_toBottomOf="@id/endTime_imageView"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="@{String.valueOf(projectItem.endTime)}"
+                    style="@style/default_text_view"
+                    android:text="@{projectItem.leftDayCount}"
                     />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

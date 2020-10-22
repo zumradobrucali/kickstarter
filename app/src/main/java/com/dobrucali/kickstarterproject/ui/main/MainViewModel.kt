@@ -56,4 +56,6 @@ class MainViewModel : ViewModel() {
     fun displayProjectDetailsComplete() {
         _navigateToSelectedProject.value = null
     }
+
+
 }

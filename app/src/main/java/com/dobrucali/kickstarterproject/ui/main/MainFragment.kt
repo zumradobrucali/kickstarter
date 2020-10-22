@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-
-
 import com.dobrucali.kickstarterproject.databinding.MainFragmentBinding
 
 class MainFragment : Fragment() {
