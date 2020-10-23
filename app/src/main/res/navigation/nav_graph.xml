@@ -22,12 +22,12 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.dobrucali.kickstarterproject.ui.main.DetailFragment"
+        android:name="com.dobrucali.kickstarterproject.ui.detail.DetailFragment"
         android:label="detail_fragment"
         tools:layout="@layout/detail_fragment">
         <argument
             android:name="selectedProject"
-            app:argType="com.dobrucali.kickstarterproject.ui.main.Project"/>
+            app:argType="com.dobrucali.kickstarterproject.network.Project"/>
     </fragment>
 
 </navigation>

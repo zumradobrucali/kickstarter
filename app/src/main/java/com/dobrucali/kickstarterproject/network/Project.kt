@@ -1,4 +1,4 @@
-package com.dobrucali.kickstarterproject.ui.main
+package com.dobrucali.kickstarterproject.network
 
 
 import android.os.Parcelable
@@ -8,7 +8,6 @@ import org.joda.time.Days
 import org.joda.time.LocalDate
 import org.joda.time.format.DateTimeFormat
 import java.text.NumberFormat
-import java.text.SimpleDateFormat
 import java.util.*
 
 

@@ -1,8 +1,9 @@
-package com.dobrucali.kickstarterproject.ui.main
+package com.dobrucali.kickstarterproject.ui.detail
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.dobrucali.kickstarterproject.network.Project
 
 class DetailViewModelFactory(
     private val project: Project,

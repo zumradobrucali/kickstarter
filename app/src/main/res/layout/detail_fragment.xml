@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.dobrucali.kickstarterproject.ui.main.DetailViewModel" />
+            type="com.dobrucali.kickstarterproject.ui.detail.DetailViewModel" />
     </data>
 
     <ScrollView
@@ -39,8 +39,11 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detail_title_textView"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
                 android:layout_marginTop="12dp"
-                android:text="@{String.valueOf(viewModel.selectedProject.amtPledged)}"
+                android:text="@{String.valueOf(viewModel.selectedProject.pledgedFormattedPrice)}"
                 tools:text="pledged"/>
             <TextView
                 android:id="@+id/blurb_textView"
@@ -49,99 +52,148 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detail_pledged_textView"
                 android:layout_marginTop="12dp"
+                android:textSize="16sp"
                 android:text="@{viewModel.selectedProject.blurb}"
                 tools:text="blurb"/>
             <TextView
-                android:id="@+id/by_textView"
-                android:layout_width="match_parent"
+                android:id="@+id/createdBy_textView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/blurb_textView"
+                android:textSize="16sp"
+                android:text="@string/created_by"/>
+            <TextView
+                android:id="@+id/by_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/createdBy_textView"
                 app:layout_constraintTop_toBottomOf="@+id/blurb_textView"
                 android:layout_marginTop="12dp"
+                android:layout_marginStart="4dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:text="@{viewModel.selectedProject.by}"
-                tools:text="by:"/>
-            <TextView
-                android:id="@+id/country_textView"
-                android:layout_width="match_parent"
+                />
+            <ImageView
+                android:id="@+id/location_imageView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/by_textView"
+                app:layout_constraintBottom_toTopOf="@id/type_textView"
                 android:layout_marginTop="12dp"
-                android:text="@{viewModel.selectedProject.country}"
-                tools:text="country:"/>
-            <TextView
-                android:id="@+id/currency_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/country_textView"
-                android:layout_marginTop="12dp"
-                android:text="@{viewModel.selectedProject.currency}"
-                tools:text="currency:"/>
-            <TextView
-                android:id="@+id/endTime_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/currency_textView"
-                android:layout_marginTop="12dp"
-                android:text="@{viewModel.selectedProject.leftDayCount}"
-                tools:text="endTime"/>
+                android:background="@drawable/ic_baseline_location_on_24"
+                />
             <TextView
                 android:id="@+id/location_textView"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/endTime_textView"
-                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toEndOf="@id/location_imageView"
+                app:layout_constraintTop_toTopOf="@id/location_imageView"
+                app:layout_constraintBottom_toBottomOf="@id/location_imageView"
+                android:gravity="center_vertical"
                 android:text="@{viewModel.selectedProject.location}"
                 tools:text="location"/>
             <TextView
-                android:id="@+id/percentage_textView"
-                android:layout_width="match_parent"
+                android:id="@+id/country_textView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/location_textView"
-                android:layout_marginTop="12dp"
-                android:text="@{String.valueOf(viewModel.selectedProject.percentageFunded)}"
-                tools:text="percentage"/>
-            <TextView
-                android:id="@+id/detail_backers_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/percentage_textView"
-                android:layout_marginTop="12dp"
-                android:text="@{viewModel.selectedProject.numBackers}"
-                tools:text="backers"/>
-            <TextView
-                android:id="@+id/state_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detail_backers_textView"
-                android:layout_marginTop="12dp"
-                android:text="@{viewModel.selectedProject.state}"
-                tools:text="state"/>
+                app:layout_constraintStart_toEndOf="@id/location_textView"
+                app:layout_constraintTop_toTopOf="@id/location_imageView"
+                app:layout_constraintBottom_toBottomOf="@id/location_imageView"
+                android:gravity="center_vertical"
+                android:layout_marginStart="4dp"
+                android:textStyle="bold"
+                android:text="@{viewModel.selectedProject.country}"
+                />
             <TextView
                 android:id="@+id/type_textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/state_textView"
-                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/location_imageView"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="24dp"
                 android:text="@{viewModel.selectedProject.type}"
                 tools:text="type"/>
+            <ImageView
+                android:id="@+id/endTime_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_baseline_calendar_today_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/type_textView"
+                app:layout_constraintBottom_toTopOf="@+id/percentage_textView"
+                android:layout_marginTop="12dp"
+                />
+            <TextView
+                android:id="@+id/endTime_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/endTime_imageView"
+                app:layout_constraintTop_toTopOf="@id/endTime_imageView"
+                app:layout_constraintBottom_toBottomOf="@id/endTime_imageView"
+                android:layout_marginStart="4dp"
+                android:text="@{viewModel.selectedProject.leftDayCount}"
+                tools:text="endTime"/>
+            <TextView
+                android:id="@+id/percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/endTime_textView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="4dp"
+                android:text="@string/percentage"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/percentage_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/percentage"
+                app:layout_constraintTop_toBottomOf="@+id/endTime_textView"
+                app:layout_constraintTop_toTopOf="@id/percentage"
+                app:layout_constraintBottom_toBottomOf="@id/percentage"
+                android:layout_marginStart="12dp"
+                android:textSize="14sp"
+                android:text="@{String.valueOf(viewModel.selectedProject.percentageFunded)}"
+                tools:text="percentage"/>
+
+            <ImageView
+                android:id="@+id/backers_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/percentage_textView"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/ic_baseline_people_24"
+                />
+            <TextView
+                android:id="@+id/detail_backers_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/backers_imageView"
+                app:layout_constraintBottom_toBottomOf="@id/backers_imageView"
+                app:layout_constraintTop_toTopOf="@id/backers_imageView"
+                android:layout_marginStart="2dp"
+                android:text="@{viewModel.selectedProject.numBackers}"
+                tools:text="backers"/>
             <Button
                 android:id="@+id/open_project_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/type_textView"
+                app:layout_constraintTop_toBottomOf="@id/backers_imageView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintWidth_percent="0.8"
                 android:layout_marginTop="12dp"
-                android:text="@string/open_project"/>
+                android:text="@string/open_project"
+                style="@style/project_button"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

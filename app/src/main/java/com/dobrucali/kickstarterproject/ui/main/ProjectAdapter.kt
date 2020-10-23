@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.dobrucali.kickstarterproject.databinding.ItemViewBinding
+import com.dobrucali.kickstarterproject.network.Project
 
 class ProjectAdapter(private val onClickListener: OnClickListener): ListAdapter<Project, ProjectAdapter.ItemViewHolder>(DiffCallBack) {
     companion object DiffCallBack: DiffUtil.ItemCallback<Project>() {

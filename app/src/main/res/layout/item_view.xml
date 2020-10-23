@@ -7,7 +7,7 @@
     <data>
         <variable
             name="projectItem"
-            type="com.dobrucali.kickstarterproject.ui.main.Project" />
+            type="com.dobrucali.kickstarterproject.network.Project" />
     </data>
 
     <RelativeLayout
@@ -62,7 +62,7 @@
                     android:text="@{String.valueOf(projectItem.pledgedFormattedPrice)}"
                     />
                 <ImageView
-                    android:id="@+id/pledged_imageView"
+                    android:id="@+id/backers_imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/ic_baseline_people_24"
@@ -76,10 +76,10 @@
                     android:layout_height="0dp"
                     android:layout_marginStart="4dp"
                     android:gravity="center_vertical"
-                    app:layout_constraintTop_toTopOf="@+id/pledged_imageView"
-                    app:layout_constraintStart_toEndOf="@id/pledged_imageView"
+                    app:layout_constraintTop_toTopOf="@+id/backers_imageView"
+                    app:layout_constraintStart_toEndOf="@id/backers_imageView"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@+id/pledged_imageView"
+                    app:layout_constraintBottom_toBottomOf="@+id/backers_imageView"
                     style="@style/default_text_view"
                     android:text="@{String.valueOf(projectItem.numBackers)}"
                     />

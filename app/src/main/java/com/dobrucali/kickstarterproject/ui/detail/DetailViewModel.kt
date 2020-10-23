@@ -1,12 +1,10 @@
-package com.dobrucali.kickstarterproject.ui.main
+package com.dobrucali.kickstarterproject.ui.detail
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import java.text.NumberFormat
-import java.util.*
+import com.dobrucali.kickstarterproject.network.Project
 
 const val BASE_PROJECT_URL = "https://www.kickstarter.com"
 

@@ -3,6 +3,8 @@ package com.dobrucali.kickstarterproject.ui.main
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.dobrucali.kickstarterproject.network.Project
+import com.dobrucali.kickstarterproject.network.ProjectApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

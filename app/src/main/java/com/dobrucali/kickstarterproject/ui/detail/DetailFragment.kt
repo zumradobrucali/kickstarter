@@ -1,6 +1,5 @@
-package com.dobrucali.kickstarterproject.ui.main
+package com.dobrucali.kickstarterproject.ui.detail
 
-import android.R
 import android.content.Intent
 import android.content.Intent.ACTION_VIEW
 import android.content.Intent.CATEGORY_BROWSABLE
@@ -21,7 +20,7 @@ class DetailFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.home -> {
+            android.R.id.home -> {
                 this.findNavController().popBackStack()
                 true
             }
