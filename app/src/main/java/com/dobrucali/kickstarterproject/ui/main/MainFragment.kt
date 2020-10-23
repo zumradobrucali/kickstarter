@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.dobrucali.kickstarterproject.MainActivity
 import com.dobrucali.kickstarterproject.databinding.MainFragmentBinding
 
 class MainFragment : Fragment() {
@@ -20,6 +21,8 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        (requireActivity() as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         val binding = MainFragmentBinding.inflate(inflater)
         binding.lifecycleOwner = this
